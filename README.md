@@ -17,10 +17,10 @@ This server exposes a single MCP endpoint (`POST /mcp`) implementing JSON-RPC 2.
 0) Install prerequisites (Windows via winget)
     ```powershell
     winget install -e --id Python.Python.3.12
-
+    
     # Optional: Install Rust toolchain (needed if you use Python 3.13 or if pip asks to build native wheels)
     winget install -e --id Rustlang.Rustup
-
+    
     # Optional: Install MSVC Build Tools (required for compiling native extensions on Windows, e.g., pydantic-core on Python 3.13)
     winget install -e --id Microsoft.VisualStudio.2022.BuildTools
     # After install, restart your shell or ensure $env:USERPROFILE\.cargo\bin is on PATH
@@ -121,7 +121,7 @@ uvicorn server.app:app --reload --port 8000 --app-dir src
 requirements.txt
 env.sample
 GPT5Plan.md
-```
+ ```
 
 ## Docker
 Build image:
@@ -142,4 +142,4 @@ docker run --rm -p 8000:8000 \
 - Expand toolset and add unit/integration tests.
 
 ## License
-TBD
+MIT
