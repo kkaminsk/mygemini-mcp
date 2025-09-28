@@ -1,0 +1,1 @@
+ curl -s -X POST http://localhost:8000/mcp -H 'Content-Type: application/json' -H 'X-API-Key: dev-key-1' -d '{ "jsonrpc": "2.0", "id": "3", "method": "tools/call", "params": { "name": "health_check", "arguments": {} } }'
