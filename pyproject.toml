@@ -1,0 +1,42 @@
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+exclude = [".venv", ".git", "__pycache__"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+exclude = [".venv", ".git", "__pycache__"]
+select = ["E", "F", "W", "I", "UP", "B", "C90"]
+ignore = [
+  # allow broad exceptions in a few places for simplicity in early phases
+  "BLE001",
+]
+
+[tool.ruff.isort]
+known-first-party = ["server", "models", "config"]
+
+[tool.mypy]
+python_version = "3.12"
+plugins = []
+strict = false
+warn_unused_configs = true
+warn_return_any = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+no_implicit_optional = true
+show_error_codes = true
+pretty = true
+mypy_path = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-q"
+pythonpath = ["src"]
+filterwarnings = [
+  "ignore::DeprecationWarning",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
